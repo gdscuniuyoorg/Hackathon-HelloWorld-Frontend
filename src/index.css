@@ -1,10 +1,32 @@
+@font-face {
+  font-family: "poppins";
+  src: url("./assets/Fonts/Poppins/Poppins-Regular.ttf");
+}
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "poppins";
+}
+:root {
+  --white: rgb(255, 255, 255);
+  --black: rgb(6, 9, 25);
+  --navBar: #152259;
+  --dropDown: #121c4a;
+  --orange100: #ff9b00;
+  --orange300: #ff9b00;
+  --orange500: #f76011;
+  --red: #ed1c24;
+  --gray: #f7f5ed;
 }
 html {
   scroll-behavior: smooth;
+}
+body {
+  font-size: 1rem;
+}
+ul {
+  list-style: none;
 }
