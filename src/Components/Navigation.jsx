@@ -11,7 +11,7 @@ import NavigationList from "./NavigationList";
 import { useState } from "react";
 
 export default function Navigation({ onDisplay }) {
-  const [display, setDisplay] = useState("Students");
+  const [display, setDisplay] = useState("Dashboard");
   function handleDisplay(selectedDisplay) {
     setDisplay(selectedDisplay);
     onDisplay((prev) => (prev = selectedDisplay));
