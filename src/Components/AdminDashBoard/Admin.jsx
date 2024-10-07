@@ -8,7 +8,7 @@ import GenerateReport from "./Main/GenerateReport";
 import Lecturers from "./Main/Lecturers";
 
 export default function Admin() {
-  const [display, setDisplay] = useState("Students");
+  const [display, setDisplay] = useState("Dashboard");
   function handleDisplay(selectedDisplay) {
     setDisplay(selectedDisplay);
   }

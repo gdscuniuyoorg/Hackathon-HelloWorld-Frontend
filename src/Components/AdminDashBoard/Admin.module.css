@@ -21,7 +21,8 @@
 .allStudentsNav .form {
   width: 50%;
 }
-.allStudentsNav img {
+.allStudentsNav img,
+.notifications {
   width: 1.5rem;
 }
 .form div {
@@ -31,7 +32,7 @@
   padding: 1rem;
   width: 100%;
 }
-.allStudentsNav .avatar {
+.avatar {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
