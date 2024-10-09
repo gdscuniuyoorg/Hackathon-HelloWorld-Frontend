@@ -1,18 +1,50 @@
 .attendance {
+  display: flex;
+  flex-direction: column;
   padding: 1rem 2rem;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 .nav {
   justify-content: space-between;
   gap: 1rem;
+  margin: 0 0 1rem 0;
 }
 .nav p {
   font-size: 1.5rem;
 }
+.content {
+  min-height: 85vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.eachContenet {
+  min-height: 22.5em;
+  border-radius: 1rem;
+  background-color: beige;
+}
+.map {
+  grid-column: 2/4;
+  grid-row: 1/4;
+  background: url(../../../assets/Images/map.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @media (max-width: 60rem) {
   .nav {
     flex-direction: column-reverse;
   }
   .welcome {
     width: 100%;
+  }
+  .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .map {
+    grid-column: unset;
+    grid-row: unset;
   }
 }
