@@ -1,11 +1,13 @@
 import "./App.css";
 import Admin from "./Components/AdminDashBoard/Admin";
-// import Student from "./Components/StudentDashBoard/Student";
+import LandingPage from "./Components/LandingPage/LandingPage";
+import Student from "./Components/StudentDashBoard/Student";
 export default function App() {
   return (
     <>
-      <Admin />
+      {/* <Admin /> */}
       {/* <Student /> */}
+      <LandingPage />
     </>
   );
 }

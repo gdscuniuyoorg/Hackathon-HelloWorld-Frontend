@@ -79,7 +79,7 @@
 .labels input {
   width: 100%;
   padding: 0.75rem;
-  border: 2px solid #ed1c24;
+  border: 2px solid gray;
   border-radius: 1rem;
 }
 .labels h3 {

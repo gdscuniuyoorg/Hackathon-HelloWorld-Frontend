@@ -1,6 +1,10 @@
 import Input from "./Input";
 import styles from "../Admin.module.css";
+import { useState } from "react";
 export default function AddNewStudent() {
+  function AddStudents(){
+
+  }
   return (
     <form action="#" className={styles.addNewStudentsform} method="post">
       <h2>Student Info</h2>
