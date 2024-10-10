@@ -14,6 +14,7 @@ export default function GetStarted() {
   function handleState(TheInput) {
     setCurrentState(TheInput);
   }
+
   const newImage = imageArray[getRandomNumber(imageArray.length - 1)];
   return (
     <section className={styles.content}>

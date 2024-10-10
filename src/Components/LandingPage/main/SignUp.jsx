@@ -1,5 +1,35 @@
+/* eslint-disable no-unused-vars */
+import { useState } from "react";
 import styles from "./form.module.css";
 export default function SignUp() {
+  const [fullName, setFullName] = useState("");
+  const [dob, setDob] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+
+  function handleFullName(event) {
+    setFullName((prev) => (prev = event.target.value));
+  }
+  function handleDob(event) {
+    setDob((prev) => (prev = event.target.value));
+  }
+  function handleEmail() {
+    setEmail((prev) => (prev = event.target.value));
+  }
+  function handlePhone() {
+    setPhone((prev) => (prev = event.target.value));
+  }
+  //   Stores signUp info
+  const signUpDetail = {
+    fullNameInput: fullName,
+    DOBInput: dob,
+    emailInput: email,
+    phoneNumberInput: phone,
+    courseInput: "",
+    studentIdInput: "",
+    registrationNumberInput: "",
+    passwordInput: "",
+  };
   return (
     <>
       <section className={styles.alt}>
@@ -16,13 +46,22 @@ export default function SignUp() {
                 id="fullName"
                 placeholder="i.e Adewale Stephen"
                 required
+                value={fullName}
+                onChange={() => handleFullName(event)}
               />
             </label>
           </div>
           <div>
             <label htmlFor="dob" className="d_flex">
               <span>Date of Birth</span>
-              <input type="date" name="dob" id="dob" required />
+              <input
+                type="date"
+                name="dob"
+                id="dob"
+                required
+                value={dob}
+                onChange={() => handleDob(event)}
+              />
             </label>
           </div>
           <div>
@@ -34,6 +73,8 @@ export default function SignUp() {
                 id="email"
                 placeholder="i.e stephen@gmail.com"
                 required
+                value={email}
+                onChange={() => handleEmail(event)}
               />
             </label>
           </div>
@@ -46,6 +87,8 @@ export default function SignUp() {
                 id="phoneNumber"
                 placeholder="+234 9030094270"
                 required
+                value={phone}
+                onChange={() => handlePhone()}
               />
             </label>
           </div>
