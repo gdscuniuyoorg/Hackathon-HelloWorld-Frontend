@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import styles from "./LandingPageHeader.module.css";
 import avater from "../assets/headerAvater.png";
-export default function LandingPageHeader() {
+export default function LandingPageHeader({ GetStarted }) {
   return (
     <section className={styles.header}>
       <section className={styles.container}>
@@ -12,7 +13,7 @@ export default function LandingPageHeader() {
             <li>E-Portal</li>
             <li>Help</li>
           </ul>
-          <button>Get Started</button>
+          <button onClick={() => GetStarted()}>Get Started</button>
         </nav>
         <header className={`${styles.headerText} d_flex `}>
           <div className={styles.text}>
@@ -23,7 +24,7 @@ export default function LandingPageHeader() {
               Smart Attendance Tracking System, Shaping the future through
               education and innovation
             </p>
-            <button>Get Started</button>
+            <button onClick={() => GetStarted()}>Get Started</button>
           </div>
           <div>
             <img src={avater} alt="avater" />

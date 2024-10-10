@@ -5,31 +5,26 @@ import NavigateAttendance from "./components/NavigateAttendance";
 import LandingPageMaps from "./components/LandingPageMaps";
 import LandingPageFooter from "./components/LandingPageFooter";
 import { useState } from "react";
-import Login from "./main/Login";
-import SignUp from "./main/SignUp";
+import GetStarted from "./main/GetStarted";
 export default function LandingPage() {
-  const [login, setLogin] = useState(false);
-  function handleLogin() {
-    setLogin(true);
+  const [getStarted, setGetStarted] = useState(false);
+  function handleGetStarted() {
+    setGetStarted(true);
   }
-  const [signUp, setSignUp] = useState(false);
-  function handleSignUp() {
-    setSignUp(true);
-  }
+
   return (
     <>
-      {!login && !signUp && (
+      {!getStarted && (
         <>
-          <LandingPageHeader SignUp={handleSignUp} />
-          <LandingPageSectionOne Login={handleLogin} SignUp={handleSignUp} />
-          <LandingPageBenefits SignUp={handleSignUp} />
+          <LandingPageHeader GetStarted={handleGetStarted} />
+          <LandingPageSectionOne GetStarted={handleGetStarted} />
+          <LandingPageBenefits GetStarted={handleGetStarted} />
           <NavigateAttendance />
           <LandingPageMaps />
           <LandingPageFooter />
         </>
       )}
-      {login && <Login />}
-      {signUp && <SignUp />}
+      {getStarted && <GetStarted />}
     </>
   );
 }

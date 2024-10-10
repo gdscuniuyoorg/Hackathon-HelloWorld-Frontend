@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import styles from "./LandingPageSectionOne.module.css";
 import avatar from "../assets/sectionAvatar.png";
-export default function LandingPageSectionOne() {
+export default function LandingPageSectionOne({ GetStarted }) {
   return (
     <section className={`d_flex ${styles.section}`}>
       <div>
@@ -21,8 +22,8 @@ export default function LandingPageSectionOne() {
           partnerships with organizations worldwide.
         </p>
         <div className={`d_flex ${styles.cta}`}>
-          <button>TAKE ATTENDANCE</button>
-          <button>Sign Up</button>
+          <button onClick={() => GetStarted()}>TAKE ATTENDANCE</button>
+          <button onClick={() => GetStarted()}>Sign Up</button>
         </div>
       </header>
     </section>

@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import styles from "./LandingPageBenefits.module.css";
-export default function LandingPageBenefits() {
+export default function LandingPageBenefits({ GetStarted }) {
   return (
     <section className={styles.section}>
       <header>
@@ -46,7 +47,7 @@ export default function LandingPageBenefits() {
         </div>
       </section>
       <div>
-        <button>Get Started</button>
+        <button onClick={() => GetStarted()}>Get Started</button>
       </div>
     </section>
   );
