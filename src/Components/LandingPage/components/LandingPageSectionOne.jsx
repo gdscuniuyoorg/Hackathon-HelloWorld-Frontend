@@ -20,9 +20,9 @@ export default function LandingPageSectionOne() {
           future career ambitions. We do this through teaching, research, and
           partnerships with organizations worldwide.
         </p>
-        <div>
+        <div className={`d_flex ${styles.cta}`}>
           <button>TAKE ATTENDANCE</button>
-          <button>Apply Now</button>
+          <button>Sign Up</button>
         </div>
       </header>
     </section>

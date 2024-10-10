@@ -98,7 +98,7 @@
     left: -50%;
   }
   to {
-    left: 50%;
+    left: 15%;
   }
 }
 @media (max-width: 60rem) {

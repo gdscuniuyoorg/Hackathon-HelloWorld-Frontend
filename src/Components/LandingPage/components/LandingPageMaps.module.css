@@ -1,0 +1,12 @@
+.section {
+  text-align: center;
+  padding: 2rem 5%;
+}
+.section h3 {
+  font-size: 1.75rem;
+  margin: 0 0 1rem 0;
+}
+.section div {
+  height: 40rem;
+  background-color: green;
+}
