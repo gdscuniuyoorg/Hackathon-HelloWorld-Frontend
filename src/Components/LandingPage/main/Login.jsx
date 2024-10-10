@@ -29,6 +29,7 @@ export default function Login() {
               name="studentID"
               id="studentID"
               placeholder="Enter your ID"
+              required
             />
           </label>
         </div>
@@ -40,6 +41,7 @@ export default function Login() {
               name="password"
               id="password"
               placeholder="Enter your password"
+              required
             />
           </label>
           <button type="button">forget password?</button>

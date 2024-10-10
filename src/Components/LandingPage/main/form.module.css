@@ -36,7 +36,8 @@
   margin: 0 0 0.65rem 0;
   text-align: start;
 }
-.form div label input {
+.form div label input,
+.form div label select {
   width: 100%;
   padding: 1rem;
   border: 2px solid #bebcbd;
@@ -55,4 +56,15 @@
   font-size: 1rem;
   background: linear-gradient(90deg, #ed1c24, #ff9b00);
   color: white;
+}
+.signUp {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 1rem 0;
+}
+@media (max-width: 60rem) {
+  .signUp {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
