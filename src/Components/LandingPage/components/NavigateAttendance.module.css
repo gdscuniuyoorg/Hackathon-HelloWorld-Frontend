@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .section {
   padding: 4rem 5%;
   justify-content: space-between;
@@ -36,3 +37,43 @@
     width: 60%;
   }
 }
+=======
+.section {
+  padding: 4rem 5%;
+  justify-content: space-between;
+  font-size: 1.125rem;
+}
+.section header {
+  width: 60%;
+}
+.section header h3 {
+  font-size: 1.75rem;
+  margin: 0 0 1rem 0;
+}
+.section header h5 {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+.illustration {
+  width: 20%;
+}
+.illustration img {
+  width: 100%;
+}
+@media (max-width: 60rem) {
+  .section {
+    padding: 2rem 5%;
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .section header {
+    width: 100%;
+  }
+  .section header h3 {
+    text-align: center;
+  }
+  .illustration {
+    width: 60%;
+  }
+}
+>>>>>>> 608e5adedacd647d47b134a4243f5484fef60192

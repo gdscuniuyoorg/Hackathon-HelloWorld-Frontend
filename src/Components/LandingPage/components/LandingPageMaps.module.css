@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .section {
   text-align: center;
   padding: 2rem 5%;
@@ -9,3 +10,17 @@
 .section div {
   height: 40rem;
 }
+=======
+.section {
+  text-align: center;
+  padding: 2rem 5%;
+}
+.section h3 {
+  font-size: 1.75rem;
+  margin: 0 0 1rem 0;
+}
+.section div {
+  height: 40rem;
+  background-color: green;
+}
+>>>>>>> 608e5adedacd647d47b134a4243f5484fef60192

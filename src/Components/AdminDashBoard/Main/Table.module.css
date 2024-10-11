@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .tableContainer {
   padding: 0 2rem;
   overflow: scroll;
@@ -45,3 +46,52 @@
     padding: 1rem 5%;
   }
 }
+=======
+.tableContainer {
+  padding: 0 2rem;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.table:last-child {
+  border-bottom: 2px solid black;
+}
+.table{
+  min-width: 80rem;
+}
+.table div {
+  padding: 0.65rem 0.25rem;
+  text-align: center;
+  color: black;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.header {
+  font-weight: 600;
+}
+.table div:nth-child(1) {
+  width: 5%;
+  border-left: 2px solid black;
+}
+.table div:nth-child(2) {
+  width: 20%;
+}
+.table div:nth-child(3) {
+  width: 25%;
+}
+.table div:nth-child(4) {
+  width: 15%;
+}
+.table div:nth-child(5) {
+  width: 15%;
+}
+.table div:nth-child(6) {
+  width: 20%;
+}
+@media (max-width: 60rem) {
+  .tableContainer {
+    padding: 1rem 5%;
+  }
+}
+>>>>>>> 608e5adedacd647d47b134a4243f5484fef60192
