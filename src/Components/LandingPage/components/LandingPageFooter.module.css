@@ -1,0 +1,36 @@
+.footer {
+  background-color: #060919;
+  padding: 2rem 5%;
+  color: white;
+}
+.cta {
+  display: flex;
+  justify-content: space-between;
+}
+.cta h4 {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.125rem;
+}
+.cta ul li + li {
+  margin: 0.35rem 0 0 0;
+}
+.about .logo {
+  font-size: 2rem;
+}
+.cta div {
+  width: 23%;
+}
+.copyright {
+  text-align: center;
+  margin: 3rem 0 0 0;
+}
+@media (max-width: 60rem) {
+  .cta {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .cta div {
+    width: 100%;
+    text-align: center;
+  }
+}

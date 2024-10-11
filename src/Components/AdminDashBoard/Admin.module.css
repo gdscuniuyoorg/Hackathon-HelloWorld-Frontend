@@ -1,0 +1,143 @@
+.main {
+  height: 100vh;
+  background-color: #ffffff;
+  /* padding: 2rem; */
+  position: relative;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+/* All Students Start */
+.allStudentsNav {
+  justify-content: space-between;
+  margin: 0 0 2rem 0;
+
+  background-color: white;
+  padding: 1rem 2rem;
+}
+.welcome {
+  position: sticky;
+  top: 0;
+}
+.allStudentsNav .form {
+  width: 50%;
+}
+.allStudentsNav img,
+.notifications {
+  width: 1.5rem;
+}
+.form div {
+  gap: 0.4rem;
+}
+.form input {
+  padding: 1rem;
+  width: 100%;
+}
+.avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: #f76011;
+}
+.allStudentsNav button {
+  padding: 0.575rem 1rem;
+  background: linear-gradient(90deg, #ed1c24, #ff9b00);
+  color: white;
+  border-radius: 0.25rem;
+}
+/* All Students End */
+
+/* Add New Students Start */
+.addNewStudentsform {
+  padding: 0 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.addNewStudentsform h2 {
+  text-align: center;
+}
+.addNewStudentsform button {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  background: linear-gradient(90deg, #ed1c24, #ff9b00);
+}
+.formSection {
+  gap: 1rem;
+  text-align: end;
+}
+.labelsContainer {
+  width: 100%;
+  flex-direction: column;
+}
+.labels {
+  width: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.labels input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid gray;
+  border-radius: 1rem;
+}
+.labels h3 {
+  text-align: start;
+  width: 100%;
+}
+/* Add New Students End */
+
+.d_flex {
+  display: flex;
+  align-items: center;
+  align-items: center;
+}
+.gap {
+  gap: 1rem;
+}
+.width {
+  width: 100%;
+}
+@media (max-width: 60rem) {
+  body {
+    width: 100%;
+  }
+  .allStudentsNav {
+    max-width: 100%;
+    padding: unset;
+    padding: 1rem 5%;
+  }
+
+  .allStudentsNav .form {
+    width: 100%;
+  }
+  .allStudentsNav img {
+    width: 1.5rem;
+  }
+  .welcome {
+    flex-direction: column-reverse;
+    justify-content: end;
+    align-items: start;
+    gap: 2rem;
+    width: 100%;
+  }
+  .form div {
+    gap: 0.4rem;
+    justify-content: space-between;
+  }
+  .form input {
+    padding: 1rem;
+    width: 100%;
+  }
+  .icons {
+    display: none;
+  }
+  .formSection {
+    flex-direction: column;
+  }
+  .labels {
+    flex-direction: column;
+    width: 100%;
+  }
+}
