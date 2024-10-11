@@ -31,7 +31,7 @@ export default function SignUp() {
     try {
 
       // Make POST request to backend
-      const response = await fetch(
+      const { ok, statusText } = await fetch(
         new URL("/api/register", APIDOMAIN),
         {
           method: "POST",
@@ -41,12 +41,34 @@ export default function SignUp() {
       )
 
       // Backend did not reply with a 200
+      if (!ok) {
+        throw new Error('Network response was not ok: ' + statusText);
+      }
+
+      // get user token
+      const response = await fetch(
+        new URL("/api/login", APIDOMAIN),
+        {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify({
+            username: studentData.username,
+            password: studentData.password,
+          })
+        }
+      )
+
+
+      // Backend did not reply with a 200
       if (!response.ok) {
         throw new Error('Network response was not ok: ' + response.statusText);
       }
 
+      const data = await response.json();
+      localStorage.setItem("token", data.token);
+
       // TODO sign up was successful, redirect user here
-      navigateTo('YOUR_REDIRECT_URL')
+      navigateTo('/student')
 
     } catch (error) {
       console.error('Sign-up Error:', error.message);
@@ -106,7 +128,7 @@ export default function SignUp() {
             name='username'
             placeholder='e.g john_doe_22'
           />
-\
+          \
           {/* NOTE this isn't being used */}
           {/* <div>
             <label htmlFor='programOfStudy' className='d_flex'>
@@ -140,23 +162,23 @@ export default function SignUp() {
             </label>
           </div> */}
 
-        <Field
-          required
-          type='text'
-          name='regNo'
-          text='Registration Number'
-          placeholder='Enter your Registration Number'
-        />
+          <Field
+            required
+            type='text'
+            name='regNo'
+            text='Registration Number'
+            placeholder='Enter your Registration Number'
+          />
 
-        <Field
-          required
-          type='password'
-          name='password'
-          text='Password'
-          placeholder='Enter your password'
-        />
+          <Field
+            required
+            type='password'
+            name='password'
+            text='Password'
+            placeholder='Enter your password'
+          />
 
-      </section>
+        </section>
         <button type='submit' className={styles.submit}>
           Sign Up
         </button>

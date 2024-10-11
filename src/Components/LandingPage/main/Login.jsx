@@ -44,7 +44,7 @@ export default function Login() {
       localStorage.setItem("token", data.token);
 
       // TODO login was successful, redirect user here
-      navigateTo('YOUR_REDIRECT_URL')
+      navigateTo('/student')
 
     } catch (error) {
       console.error('Login Error:', error.message);
