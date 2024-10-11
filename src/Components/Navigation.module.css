@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .nav {
   background-color: #0a0a0a;
   color: #9ea4a9;
@@ -67,73 +66,3 @@
     display: none;
   }
 }
-=======
-.nav {
-  background-color: #0a0a0a;
-  color: #9ea4a9;
-  min-height: 100vh;
-  width: clamp(23rem, 20%, 24rem);
-  font-size: 1.125rem;
-  font-weight: 500;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.nav_cta,
-.footer {
-  padding: 5%;
-}
-.logo {
-  text-align: center;
-  font-size: 4rem;
-  color: #f76011;
-}
-.list {
-  gap: 1rem;
-  padding: 0.5rem 0.65rem;
-  border-radius: 0.5rem;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.list:hover {
-  background-color: #ff9b00;
-  color: white;
-}
-.list + .list {
-  margin: 0.5rem 0 0 0;
-}
-.list.checked {
-  background-color: #f76011;
-  color: white;
-}
-.list img {
-  width: 1.5rem;
-}
-.d_flex {
-  display: flex;
-  align-items: center;
-  align-items: center;
-}
-.gap {
-  gap: 1rem;
-}
-.width {
-  width: 100%;
-}
-@media (max-width: 60rem) {
-  .nav {
-    min-height: 100vh;
-    width: 4rem;
-    padding: 1rem 0;
-  }
-  .logo {
-    display: none;
-  }
-  .list {
-    gap: unset;
-    justify-content: center;
-  }
-  .list span {
-    display: none;
-  }
-}
->>>>>>> 608e5adedacd647d47b134a4243f5484fef60192

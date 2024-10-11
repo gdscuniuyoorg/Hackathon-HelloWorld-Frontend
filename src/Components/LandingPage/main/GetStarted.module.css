@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .content {
   max-height: 100vh;
   overflow: hidden;
@@ -61,67 +60,3 @@
     padding: 2rem 5%;
   }
 }
-=======
-.content {
-  max-height: 100vh;
-  overflow: hidden;
-}
-.nav {
-  background-color: white;
-  justify-content: space-between;
-  padding: 1rem 5%;
-  border-bottom: 2px solid #bebcbd;
-}
-.nav .logo {
-  font-size: 2rem;
-  font-family: serif;
-}
-.nav div {
-  gap: 1rem;
-}
-.nav button {
-  padding: 0.75rem 4rem;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  color: white;
-  font-weight: 500;
-  background: linear-gradient(90deg, #ed1c24, #ff9b00);
-}
-.content main {
-  display: flex;
-  align-content: center;
-}
-.header,
-.form {
-  width: 50%;
-}
-.form {
-  padding: 2rem 2%;
-}
-.header img {
-  height: 100%;
-  width: 100%;
-}
-
-@media (max-width: 60rem) {
-  .content {
-    max-height: unset;
-  }
-  .nav .logo {
-    font-size: 1.5rem;
-  }
-  .nav button {
-    padding: 0.75rem 3rem;
-  }
-  .content main {
-    flex-direction: column;
-  }
-  .header,
-  .form {
-    width: 100%;
-  }
-  .form {
-    padding: 2rem 5%;
-  }
-}
->>>>>>> 608e5adedacd647d47b134a4243f5484fef60192
