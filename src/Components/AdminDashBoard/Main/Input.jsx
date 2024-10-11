@@ -1,12 +1,7 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
 import styles from "../Admin.module.css";
+
 export default function Input({ title, type, id }) {
-  const [inputValue, setInputValue] = useState("");
-  function handleInputVale(event) {
-    if(event.target.value === '') return
-    setInputValue(event.target.value.trim());
-  }
 
   return (
     <div className={`${styles.labelsContainer} ${styles.d_flex}`}>
@@ -17,8 +12,6 @@ export default function Input({ title, type, id }) {
           name={id}
           id={id}
           required
-          value={inputValue}
-          onChange={() => handleInputVale(event)}
         />
       </label>
     </div>

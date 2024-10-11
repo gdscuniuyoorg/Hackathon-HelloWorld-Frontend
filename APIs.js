@@ -1,3 +1,5 @@
+// @ts-check
+
 async function getToken() {
     const data = {
         username: "admin",
@@ -24,26 +26,7 @@ async function getToken() {
     }
 }
 
-/* or you use the axios method you'll need dependencies for that*/
-async function getToken() {
-    const data = {
-        username: "admin",
-        password: "admin"
-    };
-
-    try {
-        const response = await axios.post('YOUR_TOKEN_URL', data, {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-
-        return response.data.token; // Return the token from the response
-    } catch (error) {
-        console.error('Error fetching token:', error);
-    }
-}
-// Utils object to contain the registerData as a plain object
+// object to contain the registerData as a plain object
 //make sure reg_no does no comtain /
 const registerData = {
     username: 'Penivera',
@@ -54,8 +37,7 @@ const registerData = {
     last_name: 'William',
     phone_number: '08078617821',
     reg_no: '22_SC_CO_1181'
-    }
-};
+}
 
 // Function to fetch the token (assuming you have a function like testToken in your backend logic)
 async function testToken() {
@@ -69,18 +51,19 @@ async function Register() {
         // Fetch the token to use in the Authorization header
         const token = await testToken(); // Function to get the token
         const headers = {
-            'Authorization': `Token ${token}` // Use 'Authorization' header for Axios
+            'Authorization': `Token ${token}`,
+            'Content-Type': 'application/json'
         };
 
         // Make the POST request to the register endpoint with the token
-        const response = await axios.post('YOUR_REGISTER_URL', Utils.registerData, {
+        const response = await fetch('YOUR_REGISTER_URL', {
+            method: "POST",
             headers: headers,
-            // Optional: Ensure it's sent as JSON if needed
-            'Content-Type': 'application/json'
-        });
+            body: JSON.stringify(registerData)
+        })
 
-        
-        return response.data; // Return response data for further use
+
+        return response.json(); // Return response data for further use
     } catch (error) {
         console.error('Error during registration:', error.message);
     }
@@ -89,8 +72,8 @@ async function Register() {
 /*getting student data by reg_no*/
 async function getData() {
     // Replace '/' with '_' in the registration number
-    const regNo = Utils.registerData.reg_no.replace(/\//g, '_');
-    
+    const regNo = registerData.reg_no.replace(/\//g, '_');
+
     // Set up the authorization header
     const headers = {
         'Authorization': `Token ${yourTokenHere}` // Replace with the actual token gotten from the get token API 
@@ -100,9 +83,13 @@ async function getData() {
     const url = `YOUR_BASE_URL/student/${regNo}/`; // Adjust based on your API structure
 
     try {
-        // Make the POST request to the student detail endpoint with the token
-        const response = await axios.get(url, {}, { headers });
-        console.log('Response:', response.data); // Log the response data (optional)
+
+        // Make the GET request to the student detail endpoint with the token
+        const response = await fetch(url, {
+            headers
+        })
+        const data = await response.json();
+        console.log('Response:', data); // Log the response data (optional)
     } catch (error) {
         console.error('Error fetching student data:', error.message);
     }
@@ -141,14 +128,18 @@ async function createAttendance() {
         };
 
         // Make the POST request to create the attendance
-        const response = await axios.post(url, data, { headers });
+        const response = await fetch(url, {
+            headers: headers,
+            body: JSON.stringify(data),
+        })
+        const resp = await response.json();
 
         // Log and handle the response
-        console.log('Attendance Response:', response.data);
+        console.log('Attendance Response:', resp);
 
         // Ensure 'time' is in the response data
-        if (response.data && response.data.time) {
-            console.log('Attendance time:', response.data.time);
+        if (resp && resp.time) {
+            console.log('Attendance time:', resp.time);
         } else {
             throw new Error("The 'time' field is missing in the response");
         }
@@ -198,18 +189,25 @@ async function attendList() {
         // Ensure the 'date' is timezone-aware
         params.date = makeTimezoneAware(params.date);
 
+        // Add params to url
+        const fetchUrl = url + Object
+            .entries(params)
+            .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+            .join("&");
+
         // Make the GET request with parameters and headers
-        const response = await axios.get(url, {
-            headers: headers,
-            params: params // Pass the params object directly
-        });
+        const response = await fetch(fetchUrl, {
+            headers: headers
+        })
+
+        const data = await response.json();
 
         // Log and handle the response use your intuition
-        console.log('Attendance List Response:', response.data);
+        console.log('Attendance List Response:', data);
 
         // Ensure 'reg_no' is in the response data
-        if (response.data && response.data.reg_no) {
-            console.log('Registration Number:', response.data.reg_no);
+        if (data && data.reg_no) {
+            console.log('Registration Number:', data.reg_no);
         } else {
             throw new Error("The 'reg_no' field is missing in the response");
         }
@@ -246,12 +244,18 @@ async function addVenue() {
     };
 
     try {
-        const response = await axios.post(url, data, { headers });
-        console.log('Venue Add Response:', response.data);
+        const response = await fetch(url, {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(data),
+        })
+        const resp = await response.json();
+
+        console.log('Venue Add Response:', resp);
 
         // Check if the short_name is present in the response data
-        if (response.data && response.data.short_name) {
-            console.log('Venue short name:', response.data.short_name);
+        if (resp && resp.short_name) {
+            console.log('Venue short name:', resp.short_name);
         } else {
             throw new Error("The 'short_name' field is missing in the response");
         }
@@ -270,12 +274,15 @@ async function listVenues() {
     };
 
     try {
-        const response = await axios.get(url, { headers });
-        console.log('Venue List Response:', response.data);
+        const response = await fetch(url, {
+            headers: headers
+        })
+        const data = await response.json();
+        console.log('Venue List Response:', data);
 
         // Check if the short_name is present in the response data
-        if (response.data && response.data.short_name) {
-            console.log('First Venue short name:', response.data.short_name);
+        if (data && data.short_name) {
+            console.log('First Venue short name:', data.short_name);
         } else {
             throw new Error("The 'short_name' field is missing in the response");
         }
@@ -302,6 +309,7 @@ async function generatePDF() {
     };
 
     try {
+        
         const response = await axios.get(url, { headers });
 
         // Check if the status code is 200 and content type is application/pdf
@@ -358,25 +366,25 @@ function getLocationFromGoogle() {
         },
         body: JSON.stringify(data)
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok: ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(data => {
-        LATITUDE = data.location.lat;
-        LONGITUDE = data.location.lng;
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            LATITUDE = data.location.lat;
+            LONGITUDE = data.location.lng;
 
-        // Log or use the constants
-        console.log('Google API Latitude:', LATITUDE);
-        console.log('Google API Longitude:', LONGITUDE);
+            // Log or use the constants
+            console.log('Google API Latitude:', LATITUDE);
+            console.log('Google API Longitude:', LONGITUDE);
 
-        initializeGetDistance(LATITUDE, LONGITUDE);
-    })
-    .catch(error => {
-        document.getElementById('status').innerHTML = `Error: ${error.message}`;
-    });
+            initializeGetDistance(LATITUDE, LONGITUDE);
+        })
+        .catch(error => {
+            document.getElementById('status').innerHTML = `Error: ${error.message}`;
+        });
 }
 
 // Function to get location using browser's geolocation API

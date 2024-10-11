@@ -1,6 +1,7 @@
-/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import styles from "./LandingPageBenefits.module.css";
-export default function LandingPageBenefits({ GetStarted }) {
+
+export default function LandingPageBenefits() {
   return (
     <section className={styles.section}>
       <header>
@@ -47,7 +48,11 @@ export default function LandingPageBenefits({ GetStarted }) {
         </div>
       </section>
       <div>
-        <button onClick={() => GetStarted()}>Get Started</button>
+        <Link to="/signup">
+          <button>
+            Get Started
+          </button>
+        </Link>
       </div>
     </section>
   );

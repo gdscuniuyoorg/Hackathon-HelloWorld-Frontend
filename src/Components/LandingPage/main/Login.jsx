@@ -1,71 +1,81 @@
-/* eslint-disable no-unused-vars */
-import styles from "./form.module.css";
-import twitter from "../assets/twitter.png";
-import google from "../assets/Google.png";
-import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import styles from './form.module.css';
+
 export default function Login() {
-  const [uniqueId, setUniqueId] = useState("");
-  function handleUniqueId(event) {
-    setUniqueId(event.target.value);
+
+  const navigateTo = useNavigate();
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const form = new FormData(event.target);
+
+    const headers = {
+      'Content-Type': 'application/json'
+    }
+
+    const formData = {
+      // repace / with _ in reg number
+      studentId: form.get('studentId').replace(/\//g, '_'),
+      password: form.get("password")
+    }
+
+    try {
+
+      // make POST request to backend
+      const response = await fetch('YOUR_LOGIN_API', {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(formData)
+      })
+
+      // Backend did not reply with a 200
+      if (!response.ok) {
+        throw new Error('Network response was not ok: ' + response.statusText);
+      }
+
+      // TODO login was successful, redirect user here
+      navigateTo('YOUR_REDIRECT_URL')
+
+    } catch (error) {
+      console.error('Login Error:', error.message);
+    }
   }
-  const [uniquePassword, setUniquePassword] = useState("");
-  function handleUniquePassword(event) {
-    setUniquePassword(event.target.value);
-  }
-  //   Login Input
-  const loginInfo = {
-    studentID: uniqueId,
-    studentPassWord: uniquePassword,
-  };
+
   return (
     <>
       <section className={styles.alt}>
         <h2>Login</h2>
-        <div>
-          <div className={`d_flex ${styles.altLogin}`}>
-            <img src={google} alt="google" /> Continue With Google
-          </div>
-          <div className={`d_flex ${styles.altLogin}`}>
-            <img src={twitter} alt="google" /> Continue With Twitter
-          </div>
-        </div>
-        <div className={`d_flex ${styles.or}`}>
-          <hr />
-          OR
-          <hr />
-        </div>
       </section>
-      <form action="#" className={styles.form}>
+
+      <form
+        onSubmit={handleSubmit}
+        className={styles.form}
+      >
         <div>
-          <label htmlFor="studentID" className="d_flex">
+          <label htmlFor='studentId' className='d_flex'>
             <span>Student ID</span>
             <input
-              type="text"
-              name="studentID"
-              id="studentID"
-              placeholder="Enter your ID"
               required
-              value={uniqueId}
-              onChange={() => handleUniqueId(event)}
+              type='text'
+              name='studentId'
+              placeholder='Enter your ID'
             />
           </label>
         </div>
         <div>
-          <label htmlFor="studentID" className="d_flex">
+          <label htmlFor='studentId' className='d_flex'>
             <span>Password</span>
             <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Enter your password"
               required
-              value={uniquePassword}
-              onChange={() => handleUniquePassword(event)}
+              type='password'
+              name='password'
+              placeholder='Enter your password'
             />
           </label>
-          <button type="button">forget password?</button>
+          <button type='button'>forget password?</button>
         </div>
-        <button type="submit" className={styles.submit}>
+        <button type='submit' className={styles.submit}>
           Login
         </button>
         <p>

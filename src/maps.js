@@ -78,7 +78,7 @@ export default function getLocationFromBrowser() {
             initializeMap(LATITUDE, LONGITUDE);
 
         }, function (error) {
-            alert(`y`);
+            console.error('Brower Location Error:', error.message)
             // Fallback to Google Geolocation API
             getLocationFromGoogle();
         });

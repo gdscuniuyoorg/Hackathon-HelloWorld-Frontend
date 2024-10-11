@@ -1,6 +1,7 @@
 import styles from "./Attendance.module.css";
 import Chart from "./Chart";
 import Welcome from "./WelCome";
+
 export default function DashBorad() {
   return (
     <>
