@@ -1,14 +1,9 @@
-import { useState } from "react";
+import { Link, Outlet, Route, Routes } from "react-router-dom";
 import search from "../../../assets/Images/svg/search.svg";
 import styles from "../Admin.module.css";
-import Table from "./Table";
 import Welcome from "./WelCome";
-import AddNewStudent from "./AddNewStudent";
+
 export default function AllStudents() {
-  const [change, setChange] = useState(false);
-  function addNewStudent() {
-    setChange(true);
-  }
   return (
     <>
       <nav
@@ -28,14 +23,22 @@ export default function AllStudents() {
 
         <Welcome />
       </nav>
-      {!change && (
-        <nav className={`${styles.d_flex} ${styles.allStudentsNav}`}>
-          <div>All Students</div>
-          <button onClick={addNewStudent}>Add New Students</button>
-        </nav>
-      )}
-      {!change && <Table />}
-      {change && <AddNewStudent />}
+
+      <Routes>
+        <Route
+          path="/admin/students"
+          element={(
+            <nav className={`${styles.d_flex} ${styles.allStudentsNav}`}>
+              <div>All Students</div>
+              <Link to="/admin/students/new">
+                <button>Add New Students</button>
+              </Link>
+            </nav>
+          )}
+        />
+      </Routes>
+
+      <Outlet />
     </>
   );
 }

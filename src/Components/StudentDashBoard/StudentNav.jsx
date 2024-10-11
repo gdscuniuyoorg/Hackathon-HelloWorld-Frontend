@@ -1,21 +1,13 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import dashboard from "../../assets/Images/svg/home.svg";
 import lectures from "../../assets/Images/svg/dashboard.svg";
-import students from "../../assets/Images/svg/students.svg";
 import generateReport from "../../assets/Images/svg/generate.svg";
-import settings from "../../assets/Images/svg/setting.svg";
+import dashboard from "../../assets/Images/svg/home.svg";
 import logout from "../../assets/Images/svg/logout.svg";
+import settings from "../../assets/Images/svg/setting.svg";
+import students from "../../assets/Images/svg/students.svg";
 import styles from ".././Navigation.module.css";
-import { useState } from "react";
 import NavigationList from "../NavigationList";
 
-export default function StudentNav({ onDisplay }) {
-  const [display, setDisplay] = useState("Dashboard");
-  function handleDisplay(selectedDisplay) {
-    setDisplay(selectedDisplay);
-    onDisplay((prev) => (prev = selectedDisplay));
-  }
+export default function StudentNav() {
   return (
     <nav className={`${styles.nav} ${styles.d_flex}`}>
       <div className={`${styles.nav_cta} ${styles.width}`}>
@@ -24,46 +16,48 @@ export default function StudentNav({ onDisplay }) {
           <NavigationList
             image={dashboard}
             content="Dashboard"
-            Display={() => handleDisplay("Dashboard")}
-            itemSelected={display === "Dashboard"}
+            href="/student"
           />
           <NavigationList
             image={lectures}
             content="Lectures"
-            Display={() => handleDisplay("Lectures")}
-            itemSelected={display === "Lectures"}
+            href="/student/lectures"
           />
           <NavigationList
             image={lectures}
             content="Attendance"
-            Display={() => handleDisplay("Attendance")}
-            itemSelected={display === "Attendance"}
+            href="/student/attendance"
           />
           <NavigationList
             image={lectures}
             content="Location"
-            Display={() => handleDisplay("Location")}
-            itemSelected={display === "Location"}
+            href="/stuent/location"
           />
           <NavigationList
             image={students}
             content="Result"
-            Display={() => handleDisplay("Result")}
-            itemSelected={display === "Result"}
+            href="/student/result"
           />
 
           <NavigationList
             image={generateReport}
             content="Generate Report"
-            Display={() => handleDisplay("Generate Report")}
-            itemSelected={display === "Generate Report"}
+            href="/student/report"
           />
         </ul>
       </div>
       <footer className={`${styles.footer} ${styles.width}`}>
         <ul>
-          <NavigationList image={settings} content="Profiles and Setting" />
-          <NavigationList image={logout} content="Logout" />
+          <NavigationList
+            image={settings}
+            content="Profiles and Setting"
+            href="#"
+          />
+          <NavigationList
+            image={logout}
+            content="Logout"
+            href="#"
+          />
         </ul>
       </footer>
     </nav>

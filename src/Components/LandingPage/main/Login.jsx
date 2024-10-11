@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './form.module.css';
+import { APIDOMAIN } from "@/constants"
 
 export default function Login() {
 
@@ -16,23 +17,31 @@ export default function Login() {
 
     const formData = {
       // repace / with _ in reg number
-      studentId: form.get('studentId').replace(/\//g, '_'),
+      // @ts-ignore
+      username: form.get('username').replace(/\//g, '_'),
       password: form.get("password")
     }
 
     try {
 
       // make POST request to backend
-      const response = await fetch('YOUR_LOGIN_API', {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(formData)
-      })
+      const response = await fetch(
+        new URL("/api/login", APIDOMAIN),
+        {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify(formData)
+        }
+      )
 
       // Backend did not reply with a 200
       if (!response.ok) {
         throw new Error('Network response was not ok: ' + response.statusText);
       }
+
+      // store auth token with user
+      const data = await response.json();
+      localStorage.setItem("token", data.token);
 
       // TODO login was successful, redirect user here
       navigateTo('YOUR_REDIRECT_URL')
@@ -53,18 +62,18 @@ export default function Login() {
         className={styles.form}
       >
         <div>
-          <label htmlFor='studentId' className='d_flex'>
-            <span>Student ID</span>
+          <label htmlFor='username' className='d_flex'>
+            <span>Username</span>
             <input
               required
               type='text'
-              name='studentId'
-              placeholder='Enter your ID'
+              name='username'
+              placeholder='Enter your username'
             />
           </label>
         </div>
         <div>
-          <label htmlFor='studentId' className='d_flex'>
+          <label htmlFor='password' className='d_flex'>
             <span>Password</span>
             <input
               required

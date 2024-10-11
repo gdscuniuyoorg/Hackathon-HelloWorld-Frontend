@@ -40,11 +40,17 @@ export default function LandingPageHeader() {
         </header>
         <div className={styles.scrollBar}>
           <div className={styles.scrollBarOne}>
+            {/* @ts-ignore */}
             <span style={{ "--delay": 1 }}>AttendancePro *</span>{" "}
+            {/* @ts-ignore */}
             <span style={{ "--delay": 2 }}>AttendancePro *</span>{" "}
+            {/* @ts-ignore */}
             <span style={{ "--delay": 3 }}>AttendancePro *</span>{" "}
+            {/* @ts-ignore */}
             <span style={{ "--delay": 4 }}>AttendancePro *</span>
+            {/* @ts-ignore */}
             <span style={{ "--delay": 5 }}>AttendancePro *</span>{" "}
+            {/* @ts-ignore */}
             <span style={{ "--delay": 6 }}>AttendancePro *</span>
           </div>
           <div className={styles.scrollBarTwo}>

@@ -6,7 +6,7 @@ export default function Attendance() {
       <nav className={`${styles.nav} d_flex`}>
         <p>Student Attendance</p>
         <div className={styles.welcome}>
-          <Welcome Name="Prof Stephen" />
+          <Welcome />
         </div>
       </nav>
       <section className={` ${styles.attendanceContent}`}>

@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "jsx": "react-jsx",
+        "noEmit": true,
+        "skipLibCheck": true,
+        "moduleResolution": "bundler",
+        "isolatedModules": true,
+        "module": "Preserve",
+        "resolveJsonModule": true,
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*.js",
+        "src/**/*.jsx",
+        "index.d.ts"
+    ]
+}

@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Field from './field';
 import styles from './form.module.css';
+import { APIDOMAIN } from "@/constants"
 
 export default function SignUp() {
   const navigateTo = useNavigate();
@@ -19,6 +20,7 @@ export default function SignUp() {
       last_name: form.get('last_name'),
       first_name: form.get('first_name'),
       // repace / with _ in reg number
+      // @ts-ignore
       reg_no: form.get('regNo').split(/\//g, '_'),
     }
 
@@ -29,11 +31,14 @@ export default function SignUp() {
     try {
 
       // Make POST request to backend
-      const response = await fetch('YOUR_BACKEND_URL', {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(studentData),
-      })
+      const response = await fetch(
+        new URL("/api/register", APIDOMAIN),
+        {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify(studentData),
+        }
+      )
 
       // Backend did not reply with a 200
       if (!response.ok) {
@@ -59,6 +64,7 @@ export default function SignUp() {
         className={styles.form}
         onSubmit={handleSubmit}
       >
+
         <section className={styles.signUp}>
 
           <Field
@@ -100,7 +106,7 @@ export default function SignUp() {
             name='username'
             placeholder='e.g john_doe_22'
           />
-
+\
           {/* NOTE this isn't being used */}
           {/* <div>
             <label htmlFor='programOfStudy' className='d_flex'>
@@ -134,23 +140,23 @@ export default function SignUp() {
             </label>
           </div> */}
 
-          <Field
-            required
-            type='text'
-            name='regNo'
-            text='Registration Number'
-            placeholder='Enter your Registration Number'
-          />
+        <Field
+          required
+          type='text'
+          name='regNo'
+          text='Registration Number'
+          placeholder='Enter your Registration Number'
+        />
 
-          <Field
-            required
-            type='password'
-            name='password'
-            text='Password'
-            placeholder='Enter your password'
-          />
+        <Field
+          required
+          type='password'
+          name='password'
+          text='Password'
+          placeholder='Enter your password'
+        />
 
-        </section>
+      </section>
         <button type='submit' className={styles.submit}>
           Sign Up
         </button>

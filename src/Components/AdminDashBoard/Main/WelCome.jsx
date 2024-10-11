@@ -1,8 +1,11 @@
 import notification from "../../../assets/Images/svg/notify.svg";
 import moon from "../../../assets/Images/svg/moon.svg";
 import styles from "../Admin.module.css";
+
+
+// TODO fix this!
 // eslint-disable-next-line react/prop-types
-export default function Welcome({ Name }) {
+export default function Welcome({ Name = "Prof Stephen" }) {
   return (
     <>
       <div className={`${styles.d_flex} ${styles.gap}`}>

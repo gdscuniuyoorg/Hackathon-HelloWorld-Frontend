@@ -7,7 +7,7 @@ export default function TableData({
   regNumber,
   attendanceRecord,
   course,
-  headingClass,
+  headingClass = false,
 }) {
   return (
     <>
