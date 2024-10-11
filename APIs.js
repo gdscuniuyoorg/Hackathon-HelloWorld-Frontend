@@ -27,8 +27,8 @@ async function getToken() {
 /* or you use the axios method you'll need dependencies for that*/
 async function getToken() {
     const data = {
-        username: "admin",
-        password: "admin"
+        username: "helloworld",
+        password: "helloworld"
     };
 
     try {
@@ -404,3 +404,6 @@ function getLocationFromBrowser() {
 }
 
 // Event listener for DOM content loaded
+document.addEventListener("DOMContentLoaded", function () {
+    getLocationFromBrowser(); // First try using the browser's geolocation
+});
