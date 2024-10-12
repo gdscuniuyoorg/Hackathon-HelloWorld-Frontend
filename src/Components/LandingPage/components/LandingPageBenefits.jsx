@@ -15,36 +15,36 @@ export default function LandingPageBenefits() {
         <div>
           <img src="" alt="illustration" />
           <h4>Benefit One</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <p>Smart and effective attendace tracking system</p>
         </div>
 
         <div>
           <img src="" alt="illustration" />
           <h4>Benefit One</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <p>Increased productivity for the teacher or course rep</p>
         </div>
 
         <div>
           <img src="" alt="illustration" />
-          <h4>Benefit One</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <h4>Benefit Two</h4>
+          <p>No more struggling to take attendance as a student</p>
         </div>
 
         <div>
           <img src="" alt="illustration" />
-          <h4>Benefit One</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <h4>Support</h4>
+          <p>Support our ministry, let's make life easy for you</p>
         </div>
 
         <div>
           <img src="" alt="illustration" />
-          <h4>Benefit One</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <h4>Notice</h4>
+          <p>This is still in Beta mode so you might experience glitches</p>
         </div>
         <div>
           <img src="" alt="illustration" />
-          <h4>Benefit One</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <h4>Requirements</h4>
+          <p>PLEAE USE CHROMIUM BASED BROWSERS, MOST PREFERABLY CHROME</p>
         </div>
       </section>
       <div>
