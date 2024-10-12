@@ -42,7 +42,7 @@ export default function SignUp() {
 
       // Backend did not reply with a 200
       if (!ok) {
-        throw new Error('Network response was not ok: ' + statusText);
+      throw new Error('Network response was not ok: ' + statusText);
       }
 
       // get user token

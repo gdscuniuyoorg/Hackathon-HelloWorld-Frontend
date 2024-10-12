@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 import styles from "../Admin.module.css";
 
+/**
+ * @param {InputProps} param0 
+ */
 export default function Input({ title, ...props }) {
 
   return (

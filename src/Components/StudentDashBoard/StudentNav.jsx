@@ -1,9 +1,7 @@
 import lectures from "../../assets/Images/svg/dashboard.svg";
-import generateReport from "../../assets/Images/svg/generate.svg";
 import dashboard from "../../assets/Images/svg/home.svg";
 import logout from "../../assets/Images/svg/logout.svg";
 import settings from "../../assets/Images/svg/setting.svg";
-import students from "../../assets/Images/svg/students.svg";
 import styles from ".././Navigation.module.css";
 import NavigationList from "../NavigationList";
 
@@ -22,27 +20,6 @@ export default function StudentNav() {
             image={lectures}
             content="Lectures"
             href="/student/lectures"
-          />
-          <NavigationList
-            image={lectures}
-            content="Attendance"
-            href="/student/attendance"
-          />
-          <NavigationList
-            image={lectures}
-            content="Location"
-            href="/stuent/location"
-          />
-          <NavigationList
-            image={students}
-            content="Result"
-            href="/student/result"
-          />
-
-          <NavigationList
-            image={generateReport}
-            content="Generate Report"
-            href="/student/report"
           />
         </ul>
       </div>

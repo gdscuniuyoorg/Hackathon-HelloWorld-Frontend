@@ -28,3 +28,9 @@ interface Venue {
   latitude: number,
   longtitude: number,
 }
+
+type InputProps = React.Attributes<HTMLInputElement> & {
+  title: string;
+  name: string;
+  type: string;
+}

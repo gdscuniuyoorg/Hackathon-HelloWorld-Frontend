@@ -11,7 +11,6 @@ import LandingPage from "./Components/LandingPage/LandingPage";
 import GetStarted from "./Components/LandingPage/main/GetStarted";
 import Login from "./Components/LandingPage/main/Login";
 import SignUp from "./Components/LandingPage/main/SignUp";
-import StudentAttendance from "./Components/StudentDashBoard/Main/StudentAttendance";
 import StudentDashBoard from "./Components/StudentDashBoard/Main/StudentDashBoard";
 import StudentLectures from "./Components/StudentDashBoard/Main/StudentLectures";
 import Student from "./Components/StudentDashBoard/Student";
@@ -93,22 +92,6 @@ const router = createBrowserRouter([
                         path: "/student/lectures",
                         element: <StudentLectures/>
                     },
-                    {
-                        path: "/student/attendance",
-                        element: <StudentAttendance/>
-                    },
-                    {
-                        path: "/student/report",
-                        element: <h1>Generate Report</h1>
-                    },
-                    {
-                        path: "/student/result",
-                        element: <h1>Result</h1>
-                    },
-                    {
-                        path: "/student/location",
-                        element: <h1>Location</h1>
-                    }
                 ]
             }
         ]
