@@ -18,12 +18,12 @@ export default function LandingPageBenefits() {
         </div>
 
         <div>
-          <h4>Benefit One</h4>
+          <h4>Benefit Two</h4>
           <p>Accurate data: Reliable and consistent data</p>
         </div>
 
         <div>
-          <h4>Benefit Two</h4>
+          <h4>Benefit Three</h4>
           <p>Convenience: Allows students to clock in easily using their mobile devices</p>
         </div>
 
