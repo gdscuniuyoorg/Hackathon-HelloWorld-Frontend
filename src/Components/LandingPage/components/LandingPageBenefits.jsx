@@ -21,13 +21,13 @@ export default function LandingPageBenefits() {
         <div>
           <img src="" alt="illustration" />
           <h4>Benefit One</h4>
-          <p>Increased productivity for the teacher or course rep</p>
+          <p>Accurate data: Reliable and consistent data</p>
         </div>
 
         <div>
           <img src="" alt="illustration" />
           <h4>Benefit Two</h4>
-          <p>No more struggling to take attendance as a student</p>
+          <p>Convenience: Allows students to clock in easily using their mobile devices</p>
         </div>
 
         <div>
