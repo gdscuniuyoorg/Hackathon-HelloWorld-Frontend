@@ -13,38 +13,35 @@ export default function LandingPageBenefits() {
       </header>
       <section>
         <div>
-          <img src="" alt="illustration" />
           <h4>Benefit One</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <p>LReduces administrative burden </p>
+        </div>
+
+        <div>
+          <h4>Benefit Two</h4>
+          <p>Automated process</p>
         </div>
 
         <div>
           <img src="" alt="illustration" />
-          <h4>Benefit One</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <h4>Benefit Three</h4>
+          <p>Streamlined processes </p>
+        </div>
+
+        <div>
+          <h4>Notice</h4>
+          <p>We're still in beta version, glitches will arise </p>
         </div>
 
         <div>
           <img src="" alt="illustration" />
-          <h4>Benefit One</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        </div>
-
-        <div>
-          <img src="" alt="illustration" />
-          <h4>Benefit One</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        </div>
-
-        <div>
-          <img src="" alt="illustration" />
-          <h4>Benefit One</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <h4>Requirements</h4>
+          <p>Please use chromium based browsers </p>
         </div>
         <div>
           <img src="" alt="illustration" />
-          <h4>Benefit One</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <h4>Requirements</h4>
+          <p>Please enable GPS </p>
         </div>
       </section>
       <div>
